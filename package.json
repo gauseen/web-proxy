@@ -1,0 +1,33 @@
+{
+  "name": "@gauseen/web-proxy",
+  "version": "0.0.2",
+  "description": "web server proxy ajax ",
+  "main": "./lib/main.js",
+  "scripts": {
+    "dev": "node ./server.js"
+  },
+  "author": "gauseen",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "browser-sync": "^2.23.7",
+    "http-proxy-middleware": "^0.18.0",
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "koa2-connect": "^1.0.2"
+  },
+  "keywords": [
+    "server",
+    "proxy",
+    "hot",
+    "跨域",
+    "热更新"
+  ],
+  "homepage": "https://github.com/gauseen/web-proxy",
+  "bugs": "https://github.com/gauseen/web-proxy/issues",
+  "repository": {
+    "url": "https://github.com/gauseen/web-proxy.git",
+    "type": "git"
+  }
+}
