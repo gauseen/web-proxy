@@ -11,11 +11,8 @@
   "private": false,
   "dependencies": {
     "browser-sync": "^2.23.7",
-    "http-proxy-middleware": "^0.18.0",
-    "koa": "^2.5.0",
-    "koa-router": "^7.4.0",
-    "koa-static": "^4.0.2",
-    "koa2-connect": "^1.0.2"
+    "express": "^4.16.2",
+    "http-proxy-middleware": "^0.18.0"
   },
   "keywords": [
     "server",
