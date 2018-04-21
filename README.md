@@ -42,10 +42,10 @@ const options = {
 
 server(options)
 ```
-### options 参数说明：
 
-| 参数 | 说明 | 类型 | 默认 | 必选 |
-|-----|-----|-----|-----|-----|-----|
+### options 参数说明：
+| 参数 | 说明 | 类型 | 默认 | 是否必选 |
+|------|-------|---------|-------|--------|
 | `watch` | 是否开启热更新 | `Boolean` | `false` | 是 |
 | `watchStatic` | 热更新目录 | `String` | | 是 |
 | `serverStatic` | 静态服务目录 | `String` | | 是 |
@@ -58,4 +58,5 @@ server(options)
 值 为: `{ target: 要代理的（域名或IP） doman }`
 
 #### 如果好用还望给个 Star， 您的 Star 是我最大的动力，谢谢！
-[GitHub 地址](git@github.com:gauseen/web-proxy.git)
+
+[GitHub 地址](https://github.com/gauseen/web-proxy)
