@@ -1,7 +1,10 @@
-#### 创建本地服务，及服务代理
-### create http proxy and static service
+#### 创建本地服务，及服务代理，支持热更新
+### Create http proxy and Hot update
 
 ### TODO
+
+#### 特别针对老型项目设计，没有使用构建工具（ webpack、gulp、grunt etc.）
+
 > 确保你的 nodejs 版本 >= 8.0.0，
 > 解决跨域问题，支持本地开发热更新
 
@@ -11,7 +14,7 @@
 ```bash
 yarn add @gauseen/web-proxy -D
 
-or
+# or
 
 npm i @gauseen/web-proxy -D
 ```
@@ -23,8 +26,8 @@ npm i @gauseen/web-proxy -D
 ```
 
 ```js
-// server.js
 // 例子：
+// server.js
 
 const path = require('path')
 const server = require('@gauseen/web-proxy')
@@ -52,9 +55,17 @@ server(options)
 | `proxyTable` | 要代理的 `doman` | `Object` | | 是 |
 | `port` | 端口 | `Number` | `8008` | 否 |
 
+### 启动服务
+
+```bash
+node server.js
+# 或
+# 自己配置 npm scripts 运行
+```
+
 ### 注：
 `proxyTable` 是个对象，
-键 为: 请求 URL 的统一标识字段，
+键 为: 请求 `URL` 的统一标识字段，
 值 为: `{ target: 要代理的（域名或IP） doman }`
 
 #### 如果好用还望给个 Star， 您的 Star 是我最大的动力，谢谢！
