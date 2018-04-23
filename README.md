@@ -39,6 +39,14 @@ const options = {
 	port: 8008,
 	proxyTable: {
 		'/api': { target: 'http://doman.com/', }
+		'/apiFlag': {
+			target: 'http://doman.com/',
+			pathRewrite: {
+				// ^/old-path' : '/new-path
+				// 下面配置是将，/apiFlag 开头的请求，重写为 /newFlag，也可为 '' (空)
+                '^/apiFlag': '/newFlag',
+            }
+		}
 	},
 	
 }
@@ -64,9 +72,19 @@ node server.js
 ```
 
 ### 注：
-`proxyTable` 是个对象，
-键 为: 请求 `URL` 的统一标识字段，
-值 为: `{ target: 要代理的（域名或IP） doman }`
+```bash
+proxyTable 是个对象，
+
+键 为: 请求 URL 的统一标识字段，如请求接口：http://doman/api/back/login，那么 api 就是它的标识字段
+
+值 为: {
+	target: 要代理的（域名或IP） doman, # (必填)
+	pathRewrite: { '^/oldFlag': '/newFlag', } # (非必填)
+}
+
+pathRewrite 字段作用是防止后端接口比较混乱，没有统一的标识符，
+这时前端在本地开发时，可以自己添加一个统一标识符，并使用 pathRewrite 的功能，再让这个字段设置为空字符，这样就可以请求到本来的 URL
+```
 
 #### 如果好用还望给个 Star， 您的 Star 是我最大的动力，谢谢！
 
