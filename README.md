@@ -74,6 +74,8 @@ server(options)
 node server.js
 # 或
 # 自己配置 npm scripts 运行
+
+# 更改 server.js 文件后要重启服务，更改才生效
 ```
 ### 浏览器运行
 `localhost: <port>/`
