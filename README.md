@@ -65,7 +65,7 @@ server(options)
 | `proxyTable` | 要代理的 `doman` | `Object` | | 是 | - |
 | `port` | 端口 | `Number` | `8008` | 否 | - |
 | `notify` | 是否在浏览器端显示通知 | `Boolean` | `false` | 否 | - |
-| `ignores` | 忽略文件内容 | `Array` | - | 否 | `[css, html, css]` |
+| `ignores` | 忽略文件内容 | `Array` | - | 否 | `[css, html, js]` |
 | `callback` | 服务启动成功回调 | `Function` | - | 否 | - |
 
 ### 启动服务
