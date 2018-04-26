@@ -1,6 +1,6 @@
 {
   "name": "@gauseen/web-proxy",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "web server proxy ajax ",
   "main": "./lib/main.js",
   "scripts": {

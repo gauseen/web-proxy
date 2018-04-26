@@ -1,5 +1,5 @@
 #### 创建本地服务，及服务代理，支持热更新
-### Create http proxy and Hot update
+### Create http proxy support Hot update
 
 ### TODO
 
@@ -12,10 +12,8 @@
 ### 安装（install）
 
 ```bash
-yarn add @gauseen/web-proxy -D
-
+yarn add @gauseen/web-proxy -D    # 推荐
 # or
-
 npm i @gauseen/web-proxy -D
 ```
 
@@ -39,29 +37,36 @@ const options = {
 	port: 8008,
 	proxyTable: {
 		'/api': { target: 'http://doman.com/', }
-		'/apiFlag': {
+		/* '/apiFlag': {
 			target: 'http://doman.com/',
 			pathRewrite: {
 				// ^/old-path' : '/new-path
 				// 下面配置是将，/apiFlag 开头的请求，重写为 /newFlag，也可为 '' (空)
-                '^/apiFlag': '/newFlag',
-            }
-		}
+				'^/apiFlag': '/newFlag',
+			}
+		} */
 	},
-	
+	notify: true,
+	ignores: ['js'],
+	callback: function () {
+		console.log('Server run success ...')
+	},
 }
 
 server(options)
 ```
 
 ### options 参数说明：
-| 参数 | 说明 | 类型 | 默认 | 是否必选 |
-|------|-------|---------|-------|--------|
-| `watch` | 是否开启热更新 | `Boolean` | `false` | 是 |
-| `watchStatic` | 热更新目录 | `String` | | 是 |
-| `serverStatic` | 静态服务目录 | `String` | | 是 |
-| `proxyTable` | 要代理的 `doman` | `Object` | | 是 |
-| `port` | 端口 | `Number` | `8008` | 否 |
+| 参数 | 说明 | 类型 | 默认 | 是否必选 | 可选项 |
+|------|-------|---------|-------|--------|--------|
+| `watch` | 是否开启热更新 | `Boolean` | `false` | 是 | - |
+| `watchStatic` | 热更新目录 | `String` | | 是 | - |
+| `serverStatic` | 静态服务目录 | `String` | | 是 | - |
+| `proxyTable` | 要代理的 `doman` | `Object` | | 是 | - |
+| `port` | 端口 | `Number` | `8008` | 否 | - |
+| `notify` | 是否在浏览器端显示通知 | `Boolean` | `false` | 否 | - |
+| `ignores` | 忽略文件内容 | `Array` | - | 否 | `[css, html, css]` |
+| `callback` | 服务启动成功回调 | `Function` | - | 否 | - |
 
 ### 启动服务
 
@@ -70,6 +75,9 @@ node server.js
 # 或
 # 自己配置 npm scripts 运行
 ```
+### 浏览器运行
+`localhost: <port>/`
+
 
 ### 注：
 ```bash
@@ -83,7 +91,7 @@ proxyTable 是个对象，
 }
 
 pathRewrite 字段作用是防止后端接口比较混乱，没有统一的标识符，
-这时前端在本地开发时，可以自己添加一个统一标识符，并使用 pathRewrite 的功能，再让这个字段设置为空字符，这样就可以请求到本来的 URL
+这时前端在本地开发时，可以自己添加一个统一标识符，并使用 pathRewrite 的功能，再让这个字段设置为空字符，这样就可以请求到服务端本来的 URL
 ```
 
 #### 如果好用还望给个 Star， 您的 Star 是我最大的动力，谢谢！
